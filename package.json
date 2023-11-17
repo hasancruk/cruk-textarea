@@ -1,0 +1,27 @@
+{
+  "name": "@hasancruk/cruk-textarea",
+  "version": "0.0.1",
+  "description": "This is an experimental component that makes textarea auto-resizeable.",
+  "main": "cruk-textarea.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasancruk/cruk-textarea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hasancruk/cruk-textarea/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["form", "input", "textarea", "web component", "vanilla", "shadow dom"],
+  "author": {
+    "name": "Hasan Ali",
+    "email": "hasan.ali@cancer.org.uk",
+    "url": "https://www.hasanhaja.com/"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hasancruk/cruk-textarea#cruk-textarea"
+}

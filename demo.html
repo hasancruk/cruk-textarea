@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>CRUK Textarea Web Component</title>
+    <script type="module" src="./cruk-textarea.js"></script>
+	</head>
+	<body>
+    <header>
+      <h1>CRUK Textarea Web Component</h1>
+    </header>
+    <main>
+      <h2>Comments</h2>
+      <form method="POST">
+        <label for="thoughts">What are you thinking?</label>
+        <cruk-textarea>
+          <textarea name="thoughts"></textarea> 
+        </cruk-textarea>
+        <input type="submit" value="Send" />
+      </form>
+      <hr />
+      <section>
+        <h2>What you've been thinking about</h2>
+        <ul id="comments">
+        </ul>
+      </section>
+    </main>
+    <script>
+      const comments = document.querySelector("#comments");
+      let emptyListItem;
+      if (comments.childElementCount < 1) {
+        emptyListItem = document.createElement("li");
+        emptyListItem.setAttribute("data-placeholder", "");
+        emptyListItem.textContent = "Nothing here so far...";
+        comments.appendChild(emptyListItem);
+      }
+
+      const form = document.querySelector("form");
+      const submit = document.querySelector("form > input[type='submit']");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form, submit);
+        const thought = formData.get("thoughts");
+
+        if (thought) {
+          const placeholder = document.querySelector("#comments > [data-placeholder]");
+          placeholder?.remove();
+
+          const newThought = document.createElement("li");
+          newThought.textContent = thought;
+          comments.prepend(newThought);
+        }
+
+        e.target.reset();
+      });
+    </script>
+	</body>
+</html>
