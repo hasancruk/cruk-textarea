@@ -1,6 +1,6 @@
 {
   "name": "@hasancruk/cruk-textarea",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This is an experimental component that makes textarea auto-resizeable.",
   "main": "cruk-textarea.js",
   "scripts": {
